@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lista_usuario/components/user_tile.dart';
 import 'package:lista_usuario/provider/users.dart';
 import 'package:provider/provider.dart';
+import 'package:lista_usuario/models/user.dart';
+
 
 
 
@@ -22,13 +24,15 @@ class UserList extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
-            onPressed: (){},
+            onPressed: (){
+             
+            },
           ),
         ],
       ),
       body: ListView.builder(
         itemCount: users.count,
-        itemBuilder: (ctx, i ) => UserTile(users.all.elementAt(i)),
+        itemBuilder: (ctx, i ) => UserTile(users.byIndex(i)),
       ),
     );
   }
